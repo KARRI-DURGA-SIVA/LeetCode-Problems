@@ -1,4 +1,4 @@
-class NumberItSelf {
+class Numberitself {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
