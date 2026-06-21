@@ -6,16 +6,12 @@ LeetCode-Problems/
 │   └── Methods.java
 ├── Arrays/
 │   ├── README.md
-│   ├── Easy/
-│   │   └── README.md
-│   ├── Medium/
-│   │   └── NumberItself/
-│   │       ├── NumberItSelf.java
-│   │       └── readme.md
-│   └── Hard/
-│       └── maxBuildingHeight/
-│           ├── maxBuildingHeight.java
-│           └── readme.md
+│   ├── NumberItself/
+│   │   ├── NumberItSelf.java
+│   │   └── readme.md
+│   └── maxBuildingHeight/
+│       ├── maxBuildingHeight.java
+│       └── readme.md
 └── Strings/
     ├── Easy/
     │   └── README.md
