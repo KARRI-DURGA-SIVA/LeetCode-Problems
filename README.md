@@ -5,14 +5,17 @@ LeetCode-Problems/
 ├── Basic-java-methods/
 │   └── Methods.java
 ├── Arrays/
-│   ├── Easy/
-│   │   └── ShortestCompletingWord.java
-│   ├── Medium/
-│   │   └── NumberItSelf.java
-│   └── Hard/
+│   ├── NumberItself/
+│   │   ├── NumberItSelf.java
+│   │   └── readme.md
+│   └── maxBuildingHeight/
+│       ├── maxBuildingHeight.java
+│       └── readme.md
 └── Strings/
     ├── Easy/
+    │   └── README.md
     ├── Medium/
     │   └── Longestpalindrome.java
     └── Hard/
+        └── README.md
 ```
