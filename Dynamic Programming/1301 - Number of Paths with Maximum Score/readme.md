@@ -44,4 +44,4 @@ Find the maximum score that can be collected while moving from **S** to **E**, a
 ## Complexity
 
 - **Time Complexity:** `O(n²)`
-- **Space Complexity:** `O(n²)`
+- **Space Complexity:** `O(n²)`.
