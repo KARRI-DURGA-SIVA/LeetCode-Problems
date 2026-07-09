@@ -1,65 +1,42 @@
 class Solution {
+    private static final int MOD = 1_000_000_007;
+
     public int[] sumAndMultiply(String s, int[][] queries) {
-
-        int mod = 1000000007;
         int n = s.length();
-
-        int[] nonZero = new int[n + 1];
-        int total = 0;
-
-        for (int i = 0; i < n; i++) {
-            nonZero[i + 1] = nonZero[i];
-            if (s.charAt(i) != '0') {
-                nonZero[i + 1]++;
-                total++;
-            }
-        }
-
-        long[] power = new long[total + 1];
-        power[0] = 1;
-
-        for (int i = 1; i <= total; i++) {
-            power[i] = (power[i - 1] * 10) % mod;
-        }
-
-        long[] value = new long[total + 1];
-        long[] digitSum = new long[total + 1];
-
-        int index = 0;
+        int[] nonZeroCount = new int[n + 1];
+        long[] concatenatedValue = new long[n + 1];
+        int[] digitSum = new int[n + 1];
+        long[] powerOfTen = new long[n + 1];
+        powerOfTen[0] = 1;
 
         for (int i = 0; i < n; i++) {
             int digit = s.charAt(i) - '0';
 
+            nonZeroCount[i + 1] = nonZeroCount[i];
+            concatenatedValue[i + 1] = concatenatedValue[i];
+            digitSum[i + 1] = digitSum[i];
+
             if (digit != 0) {
-                index++;
-                value[index] = (value[index - 1] * 10 + digit) % mod;
-                digitSum[index] = digitSum[index - 1] + digit;
+                nonZeroCount[i + 1]++;
+                concatenatedValue[i + 1] =
+                        (concatenatedValue[i] * 10 + digit) % MOD;
+                digitSum[i + 1] += digit;
             }
+
+            powerOfTen[i + 1] = (powerOfTen[i] * 10) % MOD;
         }
 
         int[] answer = new int[queries.length];
 
         for (int i = 0; i < queries.length; i++) {
-
             int left = queries[i][0];
             int right = queries[i][1];
-
-            int start = nonZero[left];
-            int end = nonZero[right + 1];
-
-            int length = end - start;
-
-            if (length == 0) {
-                answer[i] = 0;
-                continue;
-            }
-
-            long number = value[end] - (value[start] * power[length]) % mod;
-            number = (number + mod) % mod;
-
-            long sum = digitSum[end] - digitSum[start];
-
-            answer[i] = (int) ((number * sum) % mod);
+            int length = nonZeroCount[right + 1] - nonZeroCount[left];
+            long number = concatenatedValue[right + 1]
+                    - concatenatedValue[left] * powerOfTen[length] % MOD;
+            number = (number + MOD) % MOD;
+            long sum = digitSum[right + 1] - digitSum[left];
+            answer[i] = (int) (number * sum % MOD);
         }
 
         return answer;
