@@ -1,0 +1,116 @@
+# LeetCode - Unique XOR Triplets
+
+## 3515 . Problem Number
+
+**LeetCode:** Unique XOR Triplets
+
+## Difficulty
+
+**Medium**
+
+## Problem Definition
+
+You are given an array `nums` that contains all numbers from `1` to `n` exactly once.
+
+A XOR triplet is:
+
+```text
+nums[i] ^ nums[j] ^ nums[k]
+```
+
+where:
+
+```text
+i <= j <= k
+```
+
+Return the total number of **unique XOR values** that can be formed.
+
+---
+
+## Test Case 1
+
+**Input**
+
+```text
+nums = [1,2]
+```
+
+**Output**
+
+```text
+2
+```
+
+---
+
+## Test Case 2
+
+**Input**
+
+```text
+nums = [3,1,2]
+```
+
+**Output**
+
+```text
+4
+```
+
+---
+
+## Test Case 3
+
+**Input**
+
+```text
+nums = [1]
+```
+
+**Output**
+
+```text
+1
+```
+
+---
+
+## Test Case 4
+
+**Input**
+
+```text
+nums = [1,2,3,4]
+```
+
+**Output**
+
+```text
+8
+```
+
+---
+
+## Time Complexity
+
+```text
+O(1)
+```
+
+---
+
+## Space Complexity
+
+```text
+O(1)
+```
+
+---
+
+## Topics
+
+* Array
+* Bit Manipulation
+* XOR
+* Mathematics
