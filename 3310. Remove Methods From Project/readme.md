@@ -34,7 +34,7 @@ Output: [3,4]
 
 Explanation:
 
-
+<img src="https://assets.leetcode.com/uploads/2024/07/18/graph-3.png" width="350">
 
 Methods 0, 1, and 2 are suspicious and they are not directly invoked by any other method. We can remove them.
 
@@ -46,7 +46,7 @@ Output: []
 
 Explanation:
 
-
+<img src="https://assets.leetcode.com/uploads/2024/07/20/graph.png" width="350">
 
 All methods are suspicious. We can remove them.
 
