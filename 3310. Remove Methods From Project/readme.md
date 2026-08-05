@@ -22,7 +22,7 @@ Output: [0,1,2,3]
 
 Explanation:
 
-<img src="https://assets.leetcode.com/uploads/2024/07/18/graph-2.png" width="700">
+<img src="https://assets.leetcode.com/uploads/2024/07/18/graph-2.png" width="200">
 
 Method 2 and method 1 are suspicious, but they are directly invoked by methods 3 and 0, which are not suspicious. We return all elements without removing anything.
 
