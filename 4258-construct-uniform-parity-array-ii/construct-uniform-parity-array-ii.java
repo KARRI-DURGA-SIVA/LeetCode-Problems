@@ -1,20 +1,21 @@
 class Solution {
     public boolean uniformArray(int[] nums1) {
-        boolean odd = false, even = false;
+        int min = nums1[0];
+        boolean hasOdd = (min & 1) == 1;
+        boolean hasEven = !hasOdd;
 
-        for (int num : nums1) {
-            if (num % 2 == 0) even = true;
-            else odd = true;
+        for (int i = 1; i < nums1.length; i++) {
+            int x = nums1[i];
+
+            if ((x & 1) == 1)
+                hasOdd = true;
+            else
+                hasEven = true;
+
+            if (x < min)
+                min = x;
         }
 
-        if (!odd || !even) return true;
-
-        int min = Integer.MAX_VALUE;
-
-        for (int num : nums1) {
-            min = Math.min(min, num);
-        }
-
-        return min % 2 == 1;
+        return !hasOdd || !hasEven || (min & 1) == 1;
     }
 }
