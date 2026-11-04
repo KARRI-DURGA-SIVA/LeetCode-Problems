@@ -226,9 +226,7 @@ static class TreeMultiSet<T> implements Iterable<T> {
     long[][] dp;
 
     public long minOperations(int[] nums, int x, int k) {
-        //for each element i can store value rv, which is if i start sub-array of size x from here, what is the no of ops i need to perform to make all elements equal
-        //so i can maintain two ms of equal size, l & r, and if size of l == r, then mid = (l.bottom() + r.top())/2, else if sz(r) = 1 + sz(l), then mid = r.top(), then i can remove this elmeent and move to next element and find it's rv!
-        //now i have rv for all elements, from this i have to pick K rvs that sums up lowest with a constraint that the gap between each rv should be at least x, which can be solved using DP
+     
         sumL = sumR = 0;
         int n = nums.length;
         L = new TreeMultiSet<>();
@@ -247,7 +245,7 @@ static class TreeMultiSet<T> implements Iterable<T> {
             vals[i] = cost();
         }
 
-        //that's it, now DP on this array
+      
         dp = new long[till+1][k+1];
         for(int i=0; i<till; ++i){
             Arrays.fill(dp[i], -1);
@@ -261,7 +259,7 @@ static class TreeMultiSet<T> implements Iterable<T> {
 
         long ret = dp[id][k];
         if(ret  != -1)return ret;
-        //i can use this or skip this
+     
         ret = recur(id+1, k, x, n, vals);
         long useCost = vals[id] + recur(id+x, k-1, x, n , vals);
         if(useCost < ret)ret = useCost;
