@@ -202,7 +202,7 @@ static class TreeMultiSet<T> implements Iterable<T> {
 
     void balance(){
         while(L.size() > R.size() + 1){
-            //remove L's last and add it to R
+          
             int lval = L.pollLast();
             sumL -= lval;
 
